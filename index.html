@@ -1,0 +1,67 @@
+<!DOCTYPE html> <!-- Declara que o documento está no formato HTML5. -->
+<html lang="pt-BR"> <!-- Inicia o documento HTML, definindo o idioma como português do Brasil. -->
+<head> <!-- Contém as configurações e links de estilo da página. -->
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8, que permite usar caracteres especiais. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a página para ser responsiva em dispositivos móveis. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> <!-- Carrega estilos externos como ícones da FontAwesome e a biblioteca Toastify para notificações. -->
+    <link rel="stylesheet" href="style.css"> <!-- Importa o arquivo de estilo local para customizar o visual da página. -->
+    <title>Gerador de Senha</title> <!-- Define o título da página como "Password Generator". -->
+</head>
+<body> <!-- Inicia o corpo do HTML, onde o conteúdo visual é colocado. -->
+    <div class="background">
+        <div class="background-overlay"></div>
+    </div>
+    
+    <div id="container"> <!-- Um contêiner que agrupa todos os elementos da interface. -->
+        <img src="src/images/illustration.svg" id="password_img" alt="Password security illustration."> <!-- Exibe uma imagem de ilustração para segurança de senhas. -->
+        <h1 id="title">Gerador de Senha</h1> <!-- Cabeçalho principal da página com o texto "Generate Password". -->
+        <div id="password_container"> <!-- Contêiner que vai exibir a senha gerada. -->
+            <span id="password" aria-live="polite"></span> <!-- Elemento onde a senha gerada será exibida. -->
+            <button id="copy" aria-label="Copy generated password"> <!-- Botão que permite copiar a senha gerada. -->
+                <i class="fa-solid fa-copy"></i>
+            </button>
+        </div>
+
+        <div id="password_items"> <!-- Contêiner para as opções de configuração da senha. -->
+            <div class="item"> <!-- Um bloco de configuração (como tamanho da senha). -->
+                <input id="size" name="size" type="number" min="4" max="10"> <!-- Campo para escolher o número de caracteres da senha. -->
+                <label for="size">Número de caracteres</label> <!-- Rótulo para o campo de número de caracteres. -->
+            </div>
+
+            <div class="item">
+                <input type="checkbox" name="include_uppercase" id="include_uppercase"> <!-- Checkbox para incluir letras maiúsculas na senha. -->
+                <label for="include_uppercase">
+                    Incluir letras maiúsculas
+                </label> <!-- Rótulo para o checkbox de letras maiúsculas. -->
+            </div>
+                    <!-- (Vários outros checkboxes): São usados para configurar se a senha terá letras minúsculas, números e caracteres especiais. -->
+            <div class="item">
+                <input type="checkbox" name="include_lowercase" id="include_lowercase">
+                <label for="include_lowercase">
+                    Incluir letras minúsculas
+                </label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" name="include_number" id="include_number">
+                <label for="include_number">
+                    Incluir números
+                </label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" name="include_special_character" id="include_special_character">
+                <label for="include_special_character">
+                    Incluir caracteres especiais
+                </label>
+            </div>
+            <button id="generate" aria-label="Generate a new password">
+                Gerar senha
+            </button> <!-- Botão para gerar a senha. -->
+        </div>
+    </div>
+</body>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> <!-- Importa o script da biblioteca Toastify para exibir mensagens (notificações). -->
+    <script src="script.js"></script> <!-- Importa o arquivo JavaScript que contém a lógica do gerador de senha. -->
+</html>
